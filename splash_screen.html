@@ -1,0 +1,63 @@
+<div id="splash">
+    <div style="font-size: 2.5rem; font-weight: 300; letter-spacing: 0.1em; margin-bottom: 8px; font-family: monospace;">Bienvenido</div>
+    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em; color: #94a3b8;">Cargando <span id="counter">0</span>%</div>
+    <div class="loader-bar"></div>
+</div>
+
+<style>
+    #splash {
+        position: fixed;
+        inset: 0;
+        background-color: #050505;
+        color: #ffffff;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.8s;
+    }
+    .loader-bar {
+        width: 220px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.15);
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        margin-top: 24px;
+    }
+    .loader-bar::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0%;
+        background: #ffffff;
+        animation: loadProgress 2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    }
+    @keyframes loadProgress {
+        0% { width: 0%; }
+        100% { width: 100%; }
+    }
+</style>
+
+<script>
+    let count = 0;
+    const counterElement = document.getElementById('counter');
+    const splashElement = document.getElementById('splash');
+
+    const loadInterval = setInterval(() => {
+        count += Math.floor(Math.random() * 12) + 4;
+        if (count >= 100) {
+            count = 100;
+            clearInterval(loadInterval);
+            setTimeout(() => {
+                splashElement.style.opacity = '0';
+                splashElement.style.visibility = 'hidden';
+            }, 300);
+        }
+        counterElement.textContent = count;
+    }, 100);
+</script>
+

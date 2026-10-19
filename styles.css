@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, Arial;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  border-bottom: 1px solid #c9a24d;
+}
+
+.logo-img {
+  height: 45px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+/* inicio */
+.inicio {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.logo-hero {
+  width: 220px;
+   margin-bottom: 20px;
+}
+
+.foto-perfil {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid #c9a24d;
+  object-fit: cover;
+  margin: 20px;
+}
+
+h1, h2 {
+   color: #c9a24d;
+    margin-bottom: 10px;
+}
+
+.frase {
+    font-size: 18px;
+}
+
+.btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: #c9a24d;
+  color: #000;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* SECCIONES */
+.seccion {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.fondo {
+  background: #111;
+}
+
+/* CARDS */
+
+/* --- EFECTO DE FILTRO PARA TARJETAS --- */
+
+/* 1. Aseguramos que las tarjetas tengan una transición suave para el filtro y la escala */
+.card {
+  border: 1px solid #c9a24d;
+  padding: 25px;
+  border-radius: 12px;
+  transition: all 0.5s ease; /* Importante para el efecto de desenfoque */
+  background: #000; /* Fondo sólido para que no se vea el canvas atrás al desenfocar */
+}
+
+/* 2. Cuando pasas el mouse sobre una tarjeta específica, esta se resalta */
+.card:hover {
+  transform: scale(1.05) translateY(-10px) !important; /* Un poco más grande y hacia arriba */
+  border-color: #FFD700;
+  z-index: 10;
+}
+
+/* 3. LA MAGIA: Cuando el mouse está sobre el contenedor de tarjetas (.cards)...
+   ...todas las tarjetas que NO tienen el hover se vuelven borrosas y oscuras */
+.cards:hover > .card:not(:hover) {
+  filter: blur(8px) brightness(0.4) grayscale(0.5);
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+
+/* EVIDENCIA DE PROYECTOS */
+.evidencia-de-proyectos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.fotos-de-proyectos img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid #c9a24d;
+}
+
+/* HABILIDADES Y HERRAMIENTAS */
+.habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.habilidades span {
+  border: 1px solid #c9a24d;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+
+
+/* CONTACTO */
+.redes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.redes a {
+  background: #c9a24d;
+  color: #000;
+  padding: 14px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.usuario {
+    margin-top: 20px;
+    color: #c9a24d;
+    letter-spacing: 2px;
+}
+
+/* FOOTER */
+footer {
+    padding: 20px;
+    border-top: 1px solid #c9a24d;
+    text-align: center;
+}
+
+/* Estado inicial: invisible y desplazado hacia abajo */
+.card, .seccion h2, .foto-perfil, .inicio h1, .frase {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  visibility: hidden;
+}
+
+/* Estado cuando el elemento entra en pantalla */
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* Retraso para que las tarjetas aparezcan una por una */
+.card:nth-child(2) { transition-delay: 0.1s; }
+.card:nth-child(3) { transition-delay: 0.2s; }
+.card:nth-child(4) { transition-delay: 0.3s; }
+/* ... y así sucesivamente */
+
+/* Estilos del Loader */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Siempre arriba de todo */
+  transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-logo {
+  width: 120px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.loader-text {
+  color: #c9a24d;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.linea-carga {
+  width: 0%;
+  height: 2px;
+  background: #c9a24d;
+  margin-top: 15px;
+  animation: carga 2s forwards;
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
+@keyframes carga {
+  to { width: 100%; }
+}
+
+/* Clase para ocultar el loader */
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+/* --- PERSONALIZACIÓN DEL SCROLLBAR --- */
+
+/* 1. Ancho de la barra */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* 2. El fondo de la barra (Track) */
+::-webkit-scrollbar-track {
+  background: #000; /* Negro para que combine con tu fondo */
+}
+
+/* 3. La parte que se mueve (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: #c9a24d; /* Tu color dorado característico */
+  border-radius: 10px; /* Bordes redondeados para un look moderno */
+  border: 3px solid #000; /* Espacio alrededor para que luzca flotante */
+}
+
+/* 4. Efecto al pasar el mouse (Hover) */
+::-webkit-scrollbar-thumb:hover {
+  background: #FFD700; /* Un dorado más brillante al interactuar */
+}
+
+/* Para navegadores Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c9a24d #000;
+}
+#canvas-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Se coloca detrás de todo el contenido */
+  background: #000;
+}

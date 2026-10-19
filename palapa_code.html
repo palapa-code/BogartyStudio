@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palapa Code | Frontend & Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+
+ /* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  border-bottom: 1px solid #c9a24d;
+}
+
+.logo-img {
+  height: 45px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #0095ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+        :root {
+            --bg-color: #050505;
+            --cian: #00f2ff;
+            --azul-marino: #003366;
+            --text-color: #e0e0e0;
+            --font-mono: 'Fira Code', monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header & Logo --- */
+        header {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid var(--azul-marino);
+        }
+
+        .logo-container {
+            text-align: center;
+        }
+
+        .hexagon-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--cian);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            box-shadow: 0 0 20px var(--cian);
+        }
+
+        h1 {
+            font-family: var(--font-mono);
+            color: var(--cian);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        /* --- Secciones --- */
+        section {
+            padding: 4rem 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: var(--font-mono);
+            color: var(--cian);
+            border-left: 4px solid var(--azul-marino);
+            padding-left: 15px;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Stack Tecnológico --- */
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .tech-card {
+            background: rgba(0, 51, 102, 0.2);
+            padding: 1.5rem;
+            border: 1px solid var(--azul-marino);
+            transition: 0.3s;
+        }
+
+        .tech-card:hover {
+            border-color: var(--cian);
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+        }
+
+        /* --- Servicios --- */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .service-item {
+            border: 1px solid #222;
+            padding: 2rem;
+            background: linear-gradient(145deg, #0a0a0a, #111);
+        }
+
+        .service-item h3 {
+            color: var(--cian);
+            font-family: var(--font-mono);
+        }
+
+        /* --- Proyectos --- */
+        .project-link {
+            display: block;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 1rem;
+            border: 1px dashed var(--azul-marino);
+            margin-bottom: 10px;
+            font-family: var(--font-mono);
+        }
+
+        .project-link:hover {
+            background: var(--azul-marino);
+            color: var(--cian);
+        }
+
+        /* --- Botón Call to Action --- */
+        .cta-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .btn-trabajemos {
+            background-color: transparent;
+            color: var(--cian);
+            border: 2px solid var(--cian);
+            padding: 15px 40px;
+            font-family: var(--font-mono);
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-trabajemos:hover {
+            background-color: var(--cian);
+            color: var(--bg-color);
+            box-shadow: 0 0 30px var(--cian);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+      <img src="img/1.1logo_holding.png" alt="1.1logo_holding.png" class="logo-img">
+       <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="bogarty_studio.html">Bogarty Studio</a></li>
+        <li><a href="jadash.html">Ja Dash</a></li>
+        <li><a href="contactos.html">Contacto</a></li>
+    </ul>
+    </nav>
+
+    <header>
+        <div class="logo-container">
+            <div class="hexagon-logo">
+                </div>
+            <h1>PALAPA_CODE</h1>
+            <p style="color: var(--azul-marino); font-family: var(--font-mono);">> Estructura. Orden. Modernidad.</p>
+        </div>
+    </header>
+
+    <section id="stack">
+        <h2>_STACK_TECNOLÓGICO</h2>
+        <div class="stack-grid">
+            <div class="tech-card">HTML5</div>
+            <div class="tech-card">CSS3</div>
+            <div class="tech-card">JS (ES6+)</div>
+            <div class="tech-card">React</div>
+            <div class="tech-card">Git</div>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <h2>_SERVICIOS</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <h3>Páginas Modernas</h3>
+                <p>Interfaces disruptivas con enfoque en la experiencia de usuario (UX).</p>
+            </div>
+            <div class="service-item">
+                <h3>Optimización de Carga</h3>
+                <p>Código limpio para que tu sitio vuele en cualquier conexión.</p>
+            </div>
+            <div class="service-item">
+                <h3>Diseño Responsivo</h3>
+                <p>Tu proyecto se verá impecable desde un smartphone hasta un monitor 4K.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos">
+        <h2>_PROYECTOS_DE_CÓDIGO</h2>
+        <a href="#" class="project-link">[ REPOSITORIO ] > Sistema de Gestión Energética</a>
+        <a href="#" class="project-link">[ DEMO LIVE ] > Dashboard de Análisis Real-time</a>
+        <a href="#" class="project-link">[ GITHUB ] > Librería de Componentes UI</a>
+    </section>
+
+    <div class="cta-container">
+        <a href="contactos" class="btn-trabajemos">Trabajemos juntos</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Palapa Code // Terminando transmisión...</p>
+    </footer>
+
+</body>
+</html>

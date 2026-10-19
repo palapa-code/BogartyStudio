@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadash | Moda y Emprendimiento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+
+        /* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  border-bottom: 1px solid #c9a24d;
+}
+
+.logo-img {
+  height: 45px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #f77b00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+        :root {
+            --naranja-jadash: #FF6B35;
+            --verde-jadash: #4CAF50;
+            --blanco-roto: #F9F9F9;
+            --gris-oscuro: #1A1A1A;
+            --sombra: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--blanco-roto);
+            color: var(--gris-oscuro);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 40px 5%;
+            text-align: center;
+            background: white;
+        }
+
+        .logo-placeholder {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            background: linear-gradient(45deg, var(--verde-jadash), var(--naranja-jadash));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo Lookbook / Galería */
+        .lookbook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 5%;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Sección Valores */
+        .valores {
+            background: var(--gris-oscuro);
+            color: white;
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .valores h2 { color: var(--verde-jadash); }
+        .tags {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Pruebas de Producto */
+        .evidencias {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .btn-naranja {
+            background-color: var(--naranja-jadash);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 40px;
+            transition: opacity 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-naranja:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+     <!-- NAV -->
+    <nav>
+      <img src="img/1.1logo_holding.png" alt="1.1logo_holding.png" class="logo-img">
+       <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="bogarty_studio.html">Bogarty Studio</a></li>
+        <li><a href="palapa_code.html">Palapa Code</a></li>
+        <li><a href="contactos.html">Contacto</a></li>
+    </ul>
+    </nav>
+
+    <header>
+        <div class="logo-placeholder">JADASH</div>
+        <p>Hilos que conectan identidad y mensaje.</p>
+    </header>
+
+    <section class="lookbook-grid">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=500&q=80" alt="Moda Jadash">
+            <div class="product-info">
+                <h3>Colección Origen</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" alt="Estilo Juvenil">
+            <div class="product-info">
+                <h3>Esencia Urbana</h3>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1529139513466-4209121f618a?auto=format&fit=crop&w=500&q=80" alt="Identidad Jadash">
+            <div class="product-info">
+                <h3>Línea Mensaje</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="valores">
+        <h2>Nuestra Identidad</h2>
+        <p>En Jadash, la moda no es solo lo que vistes, es lo que proyectas.</p>
+        <div class="tags">
+            <span>#Juvenil</span> • <span>#Identidad</span> • <span>#Mensaje</span>
+        </div>
+    </section>
+
+    <section class="evidencias">
+        <h2>Pruebas de Calidad</h2>
+        <p>Evidencias de nuestro proceso y resultados finales.</p>
+        <div class="lookbook-grid">
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=500&q=80"></div>
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=500&q=80"></div>
+        </div>
+        
+        <a href="contactos" class="btn-naranja">Trabajemos juntos</a>
+    </section>
+
+    <footer>
+        &copy; 2026 Jadash - Moda y Emprendimiento. Todos los derechos reservados.
+    </footer>
+
+</body>
+</html>

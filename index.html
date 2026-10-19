@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bogart | Ecosistema de Multimarcas</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@300;400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --silver: #E5E4E2;
+            --black: #050505;
+        }
+        body {
+            background-color: var(--black);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .logo-img {
+             height: 45px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+    
+        .font-handwritten {
+            font-family: 'Dancing Script', cursive;
+        }
+        .font-elegant {
+            font-family: 'Cinzel', serif;
+        }
+        .text-gold { color: var(--gold); }
+        .text-silver { color: var(--silver); }
+        
+        .gradient-gold {
+            background: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 1rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .glass-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.1);
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+        }
+
+        .logo-container img {
+            max-height: 80px;
+            width: auto;
+            filter: grayscale(1) brightness(1.2);
+            transition: 0.3s;
+        }
+
+        .logo-container:hover img {
+            filter: grayscale(0) brightness(1);
+        }
+        
+        .separator-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+        }
+
+        /* Botón Dorado */
+        .btn-dorado {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--dorado);
+            color: var(--negro);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 50px;
+            transition: 0.3s ease;
+        }
+
+        .btn-dorado:hover {
+            background-color: var(--blanco);
+            box-shadow: 0 0 20px var(--dorado);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor donde se importa dinámicamente el splash.html -->
+    <div id="splash-container"></div>
+    <script>
+        fetch('splash.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('splash-container').innerHTML = data;
+                const scripts = document.getElementById('splash-container').querySelectorAll('script');
+                scripts.forEach(script => {
+                    const newScript = document.createElement('script');
+                    newScript.textContent = script.textContent;
+                    document.body.appendChild(newScript);
+                });
+            });
+    </script>
+
+    <nav class="fixed w-full z-50 px-8 py-4 flex justify-between items-center bg-black/90 backdrop-blur-md border-b border-gold/10"> 
+        <div class="logo">
+            <img src="img/1.1logo_holding.png" alt="1.1logo_holding.png" class="logo-img">
+        </div>
+        <ul>
+            <li><a href="bogarty_studio.html">Bogarty Studio</a></li>
+            <li><a href="jadash.html">Ja Dash</a></li>
+            <li><a href="palapa_code.html">Palapa Code</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center px-4 hero-bg pt-20">
+        <div class="mb-8">
+            <span class="text-silver uppercase tracking-[0.4em] text-xs">Ecosistema de Multimarcas</span>
+        </div>
+        <h1 class="text-6xl md:text-9xl font-elegant mb-6">
+            Bogart <br/> 
+            <span class="font-handwritten gradient-gold text-7xl md:text-[10rem] block -mt-4">Multipotencial</span>
+        </h1>
+        <p class="text-silver/70 max-w-xl text-sm md:text-lg font-light tracking-widest leading-relaxed mb-10">
+          <span class="text-gold font-bold">"Impulsando el potencial de las Marcas Semilla".</span> ✝️ <br>
+            Mantén el mensaje del fundador en la sección de 
+            <span class="text-gold font-bold">"El Fundador",</span>
+             pero el encabezado principal 
+            <span class="text-gold font-bold"> (Hero) </span>
+            debe proyectar el poder del grupo.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4">
+            <a href="contactos.html" class="btn-dorado">Trabajemos juntos</a>
+        </div>
+    </section>
+
+    <div class="separator-line"></div>
+
+    <section id="fundador" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="font-handwritten text-6xl text-gold mb-4">El Fundador</h2>
+                <h3 class="text-3xl font-elegant mb-6 tracking-wider">Bogart Yael Palapa Hernández</h3>
+                <p class="text-silver/80 leading-relaxed text-sm md:text-base mb-6">
+                    Soy un joven cristiano multipotencial de 15 años. Fundador de un Holding que gestiona empresas "semilla". Mi misión es democratizar la tecnología y redefinir el streetwear con valores sólidos.
+                </p>
+                <div class="grid grid-cols-2 gap-4 text-xs tracking-widest text-silver/60">
+                    <div class="border-l border-gold/50 pl-4 py-2">✝️ CRISTIANO</div>
+                    <div class="border-l border-gold/50 pl-4 py-2">📍 EDOMEX</div>
+                    <div class="border-l border-gold/50 pl-4 py-2">💻 DEVELOPER</div>
+                    <div class="border-l border-gold/50 pl-4 py-2">🧥 DESIGNER</div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-96 md:h-96">
+                    <div class="absolute inset-0 bg-gold/10 rounded-full blur-3xl"></div>
+                    <img src="img/1.5Animacion.png" alt="Avatar Bogart" class="relative z-10 w-full h-full object-contain filter drop-shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="unidades" class="py-24 bg-[#080808]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="font-handwritten text-6xl text-gold mb-2">Marcas Semilla</h2>
+                <p class="text-silver tracking-[0.2em] text-[10px] uppercase">Unidades de Negocio Afiliadas</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="glass-card p-10 flex flex-col text-center">
+                    <div class="logo-container mb-8 h-20 flex items-center justify-center">
+                        <img src="img/1.2logo_bogarty_studio.png" alt="Bogarty Studio Logo">
+                    </div>
+                    <h4 class="font-elegant text-xl mb-4 tracking-widest">Bogarty Studio</h4>
+                    <p class="text-silver/60 text-xs leading-loose mb-8 flex-grow">
+                        La "Nave Nodriza". Gestión estratégica, marketing y branding premium para proyectos de alto impacto.
+                    </p>
+                    <div class="text-[10px] text-gold uppercase tracking-widest mb-4">No dibujamos logos, construimos legados.</div>
+                </div>
+
+                <div class="glass-card p-10 flex flex-col text-center border-t-2 border-t-gold/40">
+                    <div class="logo-container mb-8 h-20 flex items-center justify-center">
+                        <img src="img/1.3logo_palapa_code.png" alt="Palapa Code Logo">
+                    </div>
+                    <h4 class="font-elegant text-xl mb-4 tracking-widest">Palapa Code</h4>
+                    <p class="text-silver/60 text-xs leading-loose mb-8 flex-grow">
+                        El brazo tecnológico especializado en desarrollo frontend y soluciones web escalables.
+                    </p>
+                    <div class="text-[10px] text-gold uppercase tracking-widest mb-4">Powered by Palapa Code.</div>
+                </div>
+
+                <div class="glass-card p-10 flex flex-col text-center">
+                    <div class="logo-container mb-8 h-20 flex items-center justify-center">
+                        <img src="img/1.4logo_jadash.png" alt="Jadash Logo">
+                    </div>
+                    <h4 class="font-elegant text-xl mb-4 tracking-widest">Jadash</h4>
+                    <p class="text-silver/60 text-xs leading-loose mb-8 flex-grow">
+                        Moda urbana que comunica valores. Streetwear con identidad y diseño minimalista premium.
+                    </p>
+                    <div class="text-[10px] text-gold uppercase tracking-widest mb-4">Viste tu Identidad.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-handwritten text-5xl text-gold mb-12">Nuestra Metodología</h2>
+            <div class="flex flex-col md:flex-row justify-between gap-8">
+                <div class="p-6">
+                    <div class="text-4xl font-elegant text-gold mb-2">H</div>
+                    <div class="text-[10px] text-silver uppercase tracking-widest">Gancho</div>
+                    <div class="text-[9px] mt-2 text-silver/40">Captar la atención inmediata</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-elegant text-gold mb-2">E</div>
+                    <div class="text-[10px] text-silver uppercase tracking-widest">Experiencia</div>
+                    <div class="text-[9px] mt-2 text-silver/40">Narrativa y procesos reales</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-elegant text-gold mb-2">M</div>
+                    <div class="text-[10px] text-silver uppercase tracking-widest">Mensaje</div>
+                    <div class="text-[9px] mt-2 text-silver/40">Conversión y valor real</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-black py-20 border-t border-gold/10 px-8">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
+            <div>
+                <h2 class="font-elegant text-xl text-gold mb-4 tracking-widest">BOGARTY STUDIO</h2>
+                <p class="text-silver/40 text-xs">Gestión de ecosistemas de multimarcas.</p>
+            </div>
+            <div class="flex flex-col space-y-2 text-xs text-silver/60">
+                <span class="text-gold uppercase tracking-widest mb-2">Contacto</span>
+                <a href="mailto:bogartystudio@gmail.com">correo</a>
+                <a href="https://www.google.com/maps/@19.5395584,-99.0674944,12z?utm_campaign=ml-ardi-aht_2025&g_ep=Eg1tbF8yMDI2MDQwMV8wIJvbDyoASAJQAQ%3D%3D">Ver ubicación</a>
+            </div>
+            <div class="flex flex-col space-y-2 text-xs text-silver/60">
+                <span class="text-gold uppercase tracking-widest mb-2">Social</span>
+                <a href="https://www.tiktok.com/@bogartystudio?_r=1&_t=ZS-95JOwuT2XYL" class="hover:text-gold">TikTok</a>
+                <a href="https://www.instagram.com/bogartystudio?igsh=djZyZzlvdjBmZDFz" class="hover:text-gold">Instagram</a>
+            </div>
+        </div>
+        
+        <div class="mt-20 pt-8 border-t border-white/5 text-center">
+            <p class="text-[9px] text-zinc-600 uppercase tracking-[0.3em]">
+                &copy; 2026 Bogarty Studio &bull; Founder: Bogart Yael Palapa Hernández
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+
